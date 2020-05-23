@@ -26,18 +26,30 @@ covid_recovered = covid_data['recovered']
 covid_critical = covid_data['critical']
 covid_deaths = covid_data['deaths']
 
-if(covid_deaths > covid_recovered):
-    print("Death rate is higher in " + countryName)
-else:
-    print("Recovery rate is higher in " + countryName)
+total_confirmed = 5398893
+total_recovered = 2245684
+total_critical = 53536
+total_deaths = 343684
 
-"""
-print(covid_data['confirmed'])
-print(covid_data['recovered'])
-print(covid_data['critical'])
-print(covid_data['deaths'])
-print(covid_data['latitude'])
-print(covid_data['longitude'])
-print(covid_data['lastChange'])
-print(covid_data['lastUpdate'])
-"""
+total_percent = (covid_confirmed/total_confirmed)*100
+total_death = (covid_deaths/total_deaths)*100
+total_critic = (covid_critical/total_critical)*100
+total_recover = (covid_recovered/total_recovered)*100
+
+if(covid_confirmed>10000):
+    print("Covid high impact area")
+else:
+    print("Covid low impact area")
+    
+if(covid_deaths > 5000):
+    print("Death rate is higher in" + countryName)
+else:
+    print("Death rate is lower in" + " " + countryName)
+
+print("The percentage of the country's Covid-19 cases compared to the world's Covid-19 cases is" + " " + str(total_percent) + "%")
+# Get covid total for entire world
+print("The percentage of the country's Covid-19 related deaths compared to the world's Covid-19 related death is" + " " + str(total_death) + "%" )
+
+print("The percentage of the country's Covid-19 critical cases compared to the world's Covid-19 critical cases is" + " " + str(total_critic) + "%")
+
+print("The percentage of the country's Covid-19 recovered cases compared to the world's Covid-19 recovered cases is" + " " + str(total_recover) + "%")
