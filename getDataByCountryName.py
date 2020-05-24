@@ -2,8 +2,10 @@ import requests
 import json
 import time
 
-
-countryopt = str(input("Do you want to search by country code (C) or country name (N) ?"))
+while 1==1:
+    countryopt = str(input("Do you want to search by country code (C) or country name (N) ?"))
+    if countryopt.upper()=='C' or countryopt.upper()=='N':
+        break
 
 if countryopt.upper() =="C":
     jsonValue = str(input("What is the country code:"))
@@ -14,8 +16,7 @@ if countryopt.upper() =="C":
 elif countryopt.upper() =="N":
     jsonValue = str(input("What is the country name:"))
     url = "https://covid-19-data.p.rapidapi.com/country"
-    jsonKey = "name"   
-
+    jsonKey = "name"
 
 querystring = {"format":"json",jsonKey:jsonValue}
 
